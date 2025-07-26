@@ -120,7 +120,7 @@ Potential enhancements for this project:
 ## 📧 Contact
 
 For questions or feedback about this project, please contact:
-- contact@fashionforward.com (demo email)
+- thiwankasamarakoon6@gmail.com
 
 ---
 

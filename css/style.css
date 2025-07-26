@@ -1,0 +1,1021 @@
+/* 
+  Fashion Forward - Luxury Main Stylesheet
+  Version 2.0 - Enhanced with Luxury Fonts & Animations
+  July 2025
+*/
+
+/* ====================
+  Table of Contents:
+  1. General Styles & Typography
+  2. Animations & Transitions
+  3. Navigation
+  4. Hero Section
+  5. Category Cards
+  6. Product Cards
+  7. Shop Page
+  8. About Page
+  9. Contact Page
+  10. Cart Page
+  11. Footer
+  12. Media Queries
+  ==================== */
+
+/* 1. General Styles & Typography */
+:root {
+  --primary-color: #8B4B8C;
+  --primary-dark: #6B3A6C;
+  --secondary-color: #D4AF37;
+  --accent-color: #E8C547;
+  --text-color: #2C2C2C;
+  --text-light: #6C6C6C;
+  --light-bg: #FEFEFE;
+  --dark-bg: #1A1A1A;
+  --luxury-gold: #FFD700;
+  --luxury-silver: #C0C0C0;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-medium: rgba(0, 0, 0, 0.15);
+  --shadow-heavy: rgba(0, 0, 0, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', 'Libre Baskerville', serif;
+  color: var(--text-color);
+  padding-top: 92px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+}
+
+/* Luxury Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', 'Crimson Text', serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  position: relative;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textShimmer 3s ease-in-out infinite alternate;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  position: relative;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+}
+
+/* Brand/Logo Styling */
+.brand-text {
+  font-family: 'Great Vibes', 'Dancing Script', cursive;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--luxury-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 2px 2px 4px var(--shadow-light);
+}
+
+/* Signature/Script Text */
+.signature-text {
+  font-family: 'Dancing Script', 'Great Vibes', cursive;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--primary-color);
+  position: relative;
+}
+
+/* Body Text */
+p, .lead {
+  font-family: 'Libre Baskerville', 'Crimson Text', serif;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 1.2rem;
+}
+
+.lead {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+a:hover {
+  color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* 2. Animations & Transitions */
+@keyframes textShimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--primary-color);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--primary-color), 0 0 30px var(--secondary-color);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Animation Classes */
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-scale {
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Enhanced Buttons */
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  box-shadow: 0 6px 20px rgba(139, 75, 140, 0.4);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(139, 75, 140, 0.6);
+}
+
+.btn-outline-primary {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  position: relative;
+}
+
+.btn-outline-primary:hover {
+  color: white;
+  background: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 75, 140, 0.4);
+}
+
+.btn-luxury {
+  background: linear-gradient(135deg, var(--luxury-gold), var(--secondary-color));
+  color: var(--dark-bg);
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
+.btn-luxury:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
+  animation: pulseGlow 2s infinite;
+}
+
+.btn {
+  border-radius: 0;
+  padding: 8px 20px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 3. Navigation */
+.navbar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 30px var(--shadow-light);
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(139, 75, 140, 0.1);
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 10px 40px var(--shadow-medium);
+}
+
+.navbar-brand {
+  font-family: 'Great Vibes', 'Dancing Script', cursive;
+  font-weight: 400;
+  font-size: 2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+  text-shadow: 2px 2px 4px var(--shadow-light);
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 8px var(--shadow-medium));
+}
+
+.nav-link {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 50%;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.nav-link.active::after, 
+.nav-link:hover::after {
+  width: 80%;
+}
+
+/* Enhanced Search and Cart Icons */
+.navbar .btn {
+  border-radius: 25px;
+  padding: 8px 15px;
+  margin: 0 3px;
+  transition: all 0.3s ease;
+}
+
+.navbar .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px var(--shadow-light);
+}
+
+/* 4. Hero Section */
+.hero-section {
+  padding: 120px 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(248,248,248,0.9)), 
+              url('../images/couple-winter-cloths-studio.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(139, 75, 140, 0.1), rgba(212, 175, 55, 0.1));
+  pointer-events: none;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--luxury-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 30px;
+  line-height: 1.2;
+  animation: fadeInUp 1s ease-out;
+  text-shadow: 2px 2px 4px var(--shadow-light);
+}
+
+.hero-section .lead {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: var(--text-light);
+  margin-bottom: 40px;
+  animation: fadeInUp 1s ease-out 0.3s both;
+  line-height: 1.8;
+}
+
+.hero-section .btn {
+  animation: fadeInUp 1s ease-out 0.6s both;
+  font-size: 1.1rem;
+  padding: 15px 40px;
+}
+
+.hero-img {
+  background-image: url('../images/couple-winter-cloths-studio.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px var(--shadow-medium);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInScale 1s ease-out 0.9s both;
+}
+
+.hero-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(139, 75, 140, 0.1), transparent);
+  border-radius: 20px;
+}
+
+.hero-img:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px var(--shadow-heavy);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 4. Category Cards */
+.category-card {
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-10px);
+}
+
+.category-img {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.category-card:hover .category-img {
+  transform: scale(1.1);
+}
+
+.category-img.men {
+  background-image: url('../images/category-men.jpeg');
+}
+
+.category-img.women {
+  background-image: url('../images/category-women.jpeg');
+}
+
+.category-img.kids {
+  background-image: url('../images/category-kids.jpg');
+}
+
+/* 5. Product Cards */
+.product-card {
+  border: none;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+.product-img {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.1);
+}
+
+.product-title {
+  font-weight: 600;
+}
+
+.product-price {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.product-category {
+  font-size: 0.8rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product-rating i {
+  color: var(--secondary-color);
+}
+
+.product-card .btn-add-to-cart {
+  opacity: 0;
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover .btn-add-to-cart {
+  opacity: 1;
+  bottom: 20px;
+}
+
+/* 6. Shop Page */
+.shop-header {
+  padding: 60px 0;
+  margin-bottom: 20px;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* 7. About Page */
+.about-img {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  object-fit: cover;
+}
+
+.team-img-container {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-img-container {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 2px solid var(--primary-color);
+}
+
+.testimonial-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-text {
+  font-style: italic;
+}
+
+/* 8. Contact Page */
+.map-container {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+.contact-header, .about-header, .cart-header {
+  padding: 60px 0;
+  margin-bottom: 20px;
+}
+
+/* 9. Cart Page */
+.cart-product-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-control button {
+  border: 1px solid #ced4da;
+  background: none;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-control input {
+  width: 50px;
+  text-align: center;
+  border-left: 0;
+  border-right: 0;
+  height: 30px;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark)) !important;
+  color: white;
+}
+
+.newsletter-section h3 {
+  color: white !important;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.newsletter-section p {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-section .form-control {
+  border: none;
+  border-radius: 25px 0 0 25px;
+  padding: 12px 20px;
+  font-size: 1rem;
+}
+
+.newsletter-section .btn-luxury {
+  border-radius: 0 25px 25px 0;
+  padding: 12px 25px;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* 10. Footer */
+footer {
+  background: linear-gradient(135deg, var(--dark-bg), #2A2A2A);
+  color: #FFFFFF !important;
+}
+
+footer h5 {
+  color: #FFFFFF !important;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--luxury-gold), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+footer p {
+  color: #E0E0E0 !important;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+footer ul li a {
+  color: #D0D0D0 !important;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  color: var(--luxury-gold) !important;
+  transform: translateX(5px);
+}
+
+footer ul li {
+  margin-bottom: 8px;
+}
+
+footer .social-links a {
+  color: #FFFFFF !important;
+  font-size: 1.2rem;
+  margin-right: 15px;
+  transition: all 0.3s ease;
+}
+
+footer .social-links a:hover {
+  color: var(--luxury-gold) !important;
+  transform: translateY(-2px);
+}
+
+footer hr {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  height: 1px;
+  margin: 30px 0;
+}
+
+footer .text-center p {
+  color: #B0B0B0 !important;
+  font-size: 0.9rem;
+}
+
+/* Product Modal */
+.modal-product-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.size-options label {
+  border: 1px solid #ced4da;
+  padding: 5px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.size-options input[type="radio"] {
+  display: none;
+}
+
+.size-options input[type="radio"]:checked + label {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* 12. Enhanced Media Queries & Responsive Design */
+@media (max-width: 1200px) {
+  .hero-section {
+    padding: 100px 0;
+  }
+  
+  .hero-section h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+}
+
+@media (max-width: 991px) {
+  .hero-section {
+    padding: 80px 0;
+    min-height: auto;
+    background-attachment: scroll;
+  }
+  
+  .hero-img {
+    margin-top: 40px;
+    min-height: 400px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.8rem;
+  }
+  
+  .btn {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767px) {
+  body {
+    padding-top: 80px;
+  }
+  
+  .hero-section {
+    padding: 60px 0;
+  }
+  
+  .hero-section h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 20px;
+  }
+  
+  .hero-section .lead {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+  
+  .hero-img {
+    min-height: 300px;
+    margin-top: 30px;
+  }
+  
+  .category-img, .product-img {
+    height: 200px;
+  }
+  
+  .about-img {
+    height: 300px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.6rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 40px 0;
+  }
+  
+  .hero-section h1 {
+    font-size: clamp(1.8rem, 10vw, 2.5rem);
+  }
+  
+  .hero-section .lead {
+    font-size: 1rem;
+  }
+  
+  .hero-img {
+    min-height: 250px;
+    border-radius: 15px;
+  }
+  
+  .category-img, .product-img {
+    height: 180px;
+  }
+  
+  .about-img {
+    height: 250px;
+  }
+  
+  .btn {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+    margin: 5px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.4rem;
+  }
+  
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+  
+  h3 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+  }
+}
+
+/* 13. Additional Luxury Enhancements */
+.luxury-divider {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+  margin: 50px auto;
+  width: 100px;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 50px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+/* Scroll-triggered animations */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.fade-in-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced card hover effects */
+.card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  box-shadow: 0 8px 25px var(--shadow-light);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px var(--shadow-medium);
+}
+
+/* Loading animations */
+@keyframes shimmer {
+  0% { background-position: -468px 0; }
+  100% { background-position: 468px 0; }
+}
+
+.loading {
+  animation: shimmer 1.5s infinite linear;
+  background: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
+  background-size: 1000px 100%;
+}

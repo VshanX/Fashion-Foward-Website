@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fashion Forward | Home</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Luxury & Elegant Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3 brand-text" href="index.html">Fashion <span class="text-primary">Forward</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop.html">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>                <div class="d-flex">
+                    <div class="input-group me-3">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <button class="btn btn-outline-primary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <a href="wishlist.html" class="btn btn-outline-danger position-relative me-2">
+                        <i class="fas fa-heart"></i>
+                        <span id="wishlist-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            0
+                        </span>
+                    </a>
+                    <a href="cart.html" class="btn btn-outline-dark position-relative">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            0
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 class="display-4 fw-bold mb-4 animate-fade-in">Discover Latest Fashion Trends</h1>
+                    <p class="lead mb-4 animate-fade-in">Explore our collection of stylish, comfortable, and affordable clothing for everyone. Experience luxury and elegance in every piece.</p>
+                    <div class="animate-fade-in">
+                        <a href="shop.html" class="btn btn-primary btn-lg me-3">Shop Now</a>
+                        <a href="about.html" class="btn btn-luxury btn-lg">Our Story</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img animate-float" data-aos="zoom-in">
+                    <!-- Hero image will be added via CSS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 animate-fade-in">Featured Categories</h2>
+            <div class="row g-4">
+                <div class="col-md-4 animate-scale">
+                    <div class="card category-card h-100">
+                        <div class="category-img men"></div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Men's Collection</h3>
+                            <a href="shop.html?category=men" class="btn btn-outline-dark">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-scale">
+                    <div class="card category-card h-100">
+                        <div class="category-img women"></div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Women's Collection</h3>
+                            <a href="shop.html?category=women" class="btn btn-outline-dark">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 animate-scale">
+                    <div class="card category-card h-100">
+                        <div class="category-img kids"></div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Kids Collection</h3>
+                            <a href="shop.html?category=kids" class="btn btn-outline-dark">View Collection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Featured Products</h2>
+            <div class="row g-4" id="featured-products">
+                <!-- Products will be loaded dynamically with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5 bg-primary text-white newsletter-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h3 class="signature-text">Subscribe to Our Newsletter</h3>
+                    <p>Get updates on new arrivals, special offers and other discount information.</p>
+                    <form class="d-flex justify-content-center">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                            <button class="btn btn-luxury" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <h5 class="fw-bold">Fashion Forward</h5>
+                    <p>Your one-stop destination for contemporary fashion needs with unmatched quality and style.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-white">Home</a></li>
+                        <li><a href="shop.html" class="text-decoration-none text-white">Shop</a></li>
+                        <li><a href="about.html" class="text-decoration-none text-white">About Us</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h5 class="fw-bold">Shop</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="shop.html?category=men" class="text-decoration-none text-white">Men</a></li>
+                        <li><a href="shop.html?category=women" class="text-decoration-none text-white">Women</a></li>
+                        <li><a href="shop.html?category=kids" class="text-decoration-none text-white">Kids</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="fw-bold">Contact Information</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Fashion Street, City, Country</li>
+                        <li><i class="fas fa-phone me-2"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-envelope me-2"></i> contact@fashionforward.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Fashion Forward. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Modal -->
+    <div class="modal fade" id="productModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Product Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="productModalBody">
+                    <!-- Product details will be inserted here dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
